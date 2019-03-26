@@ -62,6 +62,7 @@ $(document).ready(function()
 	// Page navigation
 	var isWorkCurrentPage = true;
 	var isAboutCurrentPage = false;
+	var isPersonalCurrentPage = false;
 	
 	$("#logoDetailView").click(function()
 	{
@@ -74,13 +75,16 @@ $(document).ready(function()
 			{
 				isWorkCurrentPage = true;
 				isAboutCurrentPage = false;
+				isPersonalCurrentPage = false;
 				$("#workPage").attr("class", "currentPage");
 				$("#aboutPage").removeClass("currentPage");
+				$("#personalPage").removeClass("currentPage");
 				
 				$("#about").fadeOut(500, function()
 				{
 					$("#work").fadeIn(500);
 				});
+				$("#personal").fadeOut(500);
 			}
 		});
 	
@@ -90,13 +94,35 @@ $(document).ready(function()
 			{
 				isAboutCurrentPage = true;
 				isWorkCurrentPage = false;
+				isPersonalCurrentPage = false;
 				$("#aboutPage").attr("class", "currentPage");
 				$("#workPage").removeClass("currentPage");
+				$("#personalPage").removeClass("currentPage");
 				
 				$("#work").fadeOut(500, function()
 				{
 					$("#about").fadeIn(500);
 				});
+				$("#personal").fadeOut(500);
+			}
+		});
+	
+	$("#aboutPage").click(function()
+		{
+			if(!isPersonalCurrentPage)
+			{
+				isAboutCurrentPage = false;
+				isWorkCurrentPage = false;
+				isPersonalCurrentPage = true;
+				$("#personalPage").attr("class", "currentPage");
+				$("#workPage").removeClass("currentPage");
+				$("#aboutPage").removeClass("currentPage");
+				
+				$("#work").fadeOut(500, function()
+				{
+					$("#personal").fadeIn(500);
+				});
+				$("#about").fadeOut(500);
 			}
 		});
 	
@@ -106,6 +132,7 @@ $(document).ready(function()
 	// Hide About page
 	//$("#about").css("display", "none");
 	$("#about").fadeOut(0);
+	$("#personal").fadeOut(0);
 	
 	// For site fade site in
 	$(".container").css("display", "none");
