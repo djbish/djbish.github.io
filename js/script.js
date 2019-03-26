@@ -84,7 +84,12 @@ $(document).ready(function()
 				{
 					$("#work").fadeIn(500);
 				});
-				$("#personal").fadeOut(500);
+				
+				$("#personal").fadeOut(500, function()
+				{
+					$("#work").fadeIn(500);
+				});
+				
 			}
 		});
 	
@@ -103,7 +108,11 @@ $(document).ready(function()
 				{
 					$("#about").fadeIn(500);
 				});
-				$("#personal").fadeOut(500);
+				
+				$("#personal").fadeOut(500, function()
+				{
+					$("#about").fadeIn(500);
+				});
 			}
 		});
 	
@@ -122,7 +131,11 @@ $(document).ready(function()
 				{
 					$("#personal").fadeIn(500);
 				});
-				$("#about").fadeOut(500);
+				
+				$("#about").fadeOut(500, function()
+				{
+					$("#personal").fadeIn(500);
+				});
 			}
 		});
 	
