@@ -107,7 +107,7 @@ $(document).ready(function()
 			}
 		});
 	
-	$("#aboutPage").click(function()
+	$("#personalPage").click(function()
 		{
 			if(!isPersonalCurrentPage)
 			{
